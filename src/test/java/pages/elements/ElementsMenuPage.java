@@ -3,11 +3,12 @@ package pages.elements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
 
-public class ElementsMenuButtons extends BasePage {
+public class ElementsMenuPage extends BasePage {
 
-    public ElementsMenuButtons(WebDriver driver) {
+    public ElementsMenuPage(WebDriver driver) {
         super(driver);
     }
 
@@ -18,6 +19,7 @@ public class ElementsMenuButtons extends BasePage {
     WebElement elementsMainHeader;
 
     public void clickOnTextBoxMenuButton() {
+        wait.until(ExpectedConditions.visibilityOf(elementsMainHeader));
         textBoxMenuButton.click();
     }
 
