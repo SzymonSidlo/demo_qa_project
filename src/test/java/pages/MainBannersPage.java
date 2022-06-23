@@ -19,6 +19,15 @@ public class MainBannersPage extends BasePage {
     @FindBy(xpath = "//div[@class='card mt-4 top-card' and descendant::h5[text()='Elements']]")
     WebElement elementsBanner;
 
+    @FindBy(xpath = "//div[@class='card mt-4 top-card' and descendant::h5[text()='Forms']]")
+    WebElement formsBanner;
+
+    @FindBy(xpath = "//div[@class='card mt-4 top-card' and descendant::h5[text()='Interactions']]")
+    WebElement interactionsBanner;
+
+    @FindBy(xpath = "//div[@class='card mt-4 top-card' and descendant::h5[text()='Widgets']]")
+    WebElement widgetsBanner;
+
 
     public List<String> getBannerLabels() {
         return banersLabels.stream()
@@ -29,4 +38,18 @@ public class MainBannersPage extends BasePage {
     public void clickOnElementsBanner() {
         elementsBanner.click();
     }
+
+    public void clickOnFormsBanner() {
+        formsBanner.click();
+    }
+
+    public void clickOnInteractionsBanner() {
+        interactionsBanner.click();
+    }
+
+    public void clickOnWidgetsBanner() {
+        widgetsBanner.click();
+    }
+
+
 }

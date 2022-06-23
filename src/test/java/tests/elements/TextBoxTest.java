@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.MainBannersPage;
-import pages.elements.ElementsMenuButtons;
+import pages.elements.ElementsMenuPage;
 import pages.elements.TextBoxPage;
 import tests.BaseTest;
 import utils.PageTitleUtils;
@@ -16,7 +16,7 @@ public class TextBoxTest extends BaseTest {
 
     private TextBoxPage textBoxPage;
     private MainBannersPage mainBannersPage;
-    private ElementsMenuButtons elementsMenuButtons;
+    private ElementsMenuPage elementsMenuPage;
 
     @BeforeEach
     public void setupTest() {
@@ -26,20 +26,18 @@ public class TextBoxTest extends BaseTest {
 
         textBoxPage = new TextBoxPage(driver);
         mainBannersPage = new MainBannersPage(driver);
-        elementsMenuButtons = new ElementsMenuButtons(driver);
+        elementsMenuPage = new ElementsMenuPage(driver);
     }
 
     @Test
     public void shouldFillInTextBoxContentAndSubmit() {
         mainBannersPage.clickOnElementsBanner();
-        //dodaj wait
-
-        elementsMenuButtons.clickOnTextBoxMenuButton();
+        elementsMenuPage.clickOnTextBoxMenuButton();
 
         Content content = new Content();
         content.setFullName("Simon The Snare");
         content.setEmail("simon123@wp.pl");
-        content.setCurrentAddress("Straight Street 11 , 39300 Acapulco");
+        content.setCurrentAddress("Straight Street 11, 39300 Acapulco");
         content.setPremanentAddress("S/A");
         textBoxPage.sendTextBoxContent(content);
 
@@ -49,12 +47,10 @@ public class TextBoxTest extends BaseTest {
     @Test
     public void shouldNotBeAbleToSubmitWithoutContent() {
         mainBannersPage.clickOnElementsBanner();
-        //dodaj wait
-        elementsMenuButtons.clickOnTextBoxMenuButton();
+        elementsMenuPage.clickOnTextBoxMenuButton();
         textBoxPage.clickOnSubmitButton();
 
         assertThat(textBoxPage.isAnyOutputFrameDisplayed()).isFalse();
     }
-
 
 }
