@@ -1,6 +1,7 @@
 package tests.forms;
 
 import model.forms.practiceform.Content;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -47,6 +48,10 @@ public class PracticeFormTest extends BaseTest {
         content.setCurrentAddress("Simple Street 12, 302001 Jaipur, Rajasthan");
         practiceFormPage.sendPracticeFormContent(content);
 
+        Assertions.assertThat(content.getFirstName().equals("Simon")).isTrue();
+        Assertions.assertThat(content.getLastName().equals("Tester")).isTrue();
+        Assertions.assertThat(content.getEmail().equals("simontest321@interia.pl")).isTrue();
+        Assertions.assertThat(content.getMobile()).isEqualTo(1234567890);
+        Assertions.assertThat(content.getCurrentAddress().equals("Simple Street 12, 302001 Jaipur, Rajasthan")).isTrue();
     }
-
 }
