@@ -41,8 +41,15 @@ public class Content {
         return mobile;
     }
 
+
+    // Uwaga próbuję rzut wyjątkiem
+
     public void setMobile(int mobile) {
-        this.mobile = mobile;
+        if (Integer.toString(mobile).length() == 10) {
+            this.mobile = mobile;
+        } else {
+            throw new IllegalStateException("Mobile must contain 10 digits");
+        }
     }
 
     public String getCurrentAddress() {
