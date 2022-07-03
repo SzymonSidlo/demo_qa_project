@@ -8,9 +8,17 @@ import pages.BasePage;
 
 public class PracticeFormPage extends BasePage {
 
+    // UWAGA DODATKOWO TWORZE POLA OBIEKTU
+    private String firstName;
+    private String lastName;
+    private String email;
+    private int mobile;
+    private String currentAddress;
+
     public PracticeFormPage(WebDriver driver) {
         super(driver);
     }
+
 
     @FindBy(id = "firstName")
     WebElement firstnameLabel;
@@ -50,6 +58,7 @@ public class PracticeFormPage extends BasePage {
     }
 
 
+    // Poniżej wersja nr 1
     public void sendPracticeFormContent(Content content) {
         firstnameLabel.sendKeys(content.getFirstName());
         lastNameLabel.sendKeys(content.getLastName());
@@ -57,5 +66,52 @@ public class PracticeFormPage extends BasePage {
         mobileLabel.sendKeys(Integer.toString(content.getMobile()));
         currentAddressLabel.sendKeys(content.getCurrentAddress());
     }
+
+    // UWAGA, PONIŻEJ WERSJA ALTERNATYWNA - UPROSZCZONA (bez dodatkowego obiektu)
+
+//    public String getFirstName() {
+//        return firstName;
+//    }
+//
+//    public void setFirstName(String firstName) {
+//        firstnameLabel.sendKeys(firstName);
+//        this.firstName = firstName;
+//    }
+//
+//    public String getLastName() {
+//        return lastName;
+//    }
+//
+//    public void setLastName(String lastName) {
+//        lastNameLabel.sendKeys(lastName);
+//        this.lastName = lastName;
+//    }
+//
+//    public String getEmail() {
+//        return email;
+//    }
+//
+//    public void setEmail(String email) {
+//        emailLabel.sendKeys(email);
+//        this.email = email;
+//    }
+//
+//    public int getMobile() {
+//        return mobile;
+//    }
+//
+//    public void setMobile(int mobile) {
+//        mobileLabel.sendKeys(Integer.toString(mobile));
+//        this.mobile = mobile;
+//    }
+//
+//    public String getCurrentAddress() {
+//        return currentAddress;
+//    }
+//
+//    public void setCurrentAddress(String currentAddress) {
+//        currentAddressLabel.sendKeys(currentAddress);
+//        this.currentAddress = currentAddress;
+//    }
 
 }
