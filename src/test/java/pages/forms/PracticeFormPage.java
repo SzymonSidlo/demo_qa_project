@@ -8,7 +8,7 @@ import pages.BasePage;
 
 public class PracticeFormPage extends BasePage {
 
-    // UWAGA DODATKOWO TWORZE POLA OBIEKTU
+
     private String firstName;
     private String lastName;
     private String email;
