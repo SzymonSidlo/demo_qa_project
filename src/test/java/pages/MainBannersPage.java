@@ -50,6 +50,8 @@ public class MainBannersPage extends BasePage {
     public void clickOnWidgetsBanner() {
         widgetsBanner.click();
     }
+    
+    // roboczy komentarz
 
 
 }
