@@ -51,7 +51,7 @@ public class MainBannersPage extends BasePage {
         widgetsBanner.click();
     }
     
-    // roboczy komentarz
+    // roboczy komentarz SzS
 
 
 }
